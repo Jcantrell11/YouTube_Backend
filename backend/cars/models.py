@@ -3,7 +3,6 @@ from authentication.models import User
 
 # Create your models here.
 
-# <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 
 class Car(models.Model):
