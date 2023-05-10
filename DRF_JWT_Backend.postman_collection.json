@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d4409d57-7119-4339-bfae-1f3a18bc6341",
+		"_postman_id": "3c0ea1be-fc59-48e2-8598-5709f9501c85",
 		"name": "DRF_JWT_Backend",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25679095"
 	},
 	"item": [
 		{
@@ -151,7 +152,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU2ODM5LCJpYXQiOjE2NDcyOTI4MzksImp0aSI6ImJjYzJhZTUzOTRlYzQ3OThiNjI0YTcwYTYzYjcxOThmIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJqanZlZ2EiLCJmaXJzdF9uYW1lIjoiIn0.l9ATW5CpWF2TGniqVgU1I-a8LkuqgLQ4ok3tJh6asAA",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NTQ4NzQzLCJpYXQiOjE2ODM2ODQ3NDMsImp0aSI6IjlhNTkwOTY3YTBjYTRkNWU5YzY1Zjg4NmI4ZjlhMDgyIiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJvYmkxIiwiZmlyc3RfbmFtZSI6Ik9iaS1XYW4ifQ.tonqZF52hsLbSPatdoWj98eLIvMXcJAma8XgTxBlsVM",
 								"type": "text"
 							}
 						],
@@ -186,6 +187,16 @@
 				{
 					"name": "POST new car for user (protected)",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NTAzODIzLCJpYXQiOjE2ODM2Mzk4MjMsImp0aSI6ImNhOWI5MmFjNzIzOTQ1YmVhNmZkZTYwNmVjMzg5YjRiIiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJvYmkxIiwiZmlyc3RfbmFtZSI6Ik9iaS1XYW4ifQ.HogEckjnQIGzruBoojl11OCuZaaqZTo2H2ztft8_y9Q",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -216,6 +227,106 @@
 							"path": [
 								"api",
 								"cars",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "GET comments by video_id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NTUxMTY2LCJpYXQiOjE2ODM2ODcxNjYsImp0aSI6IjZkZTkzNjJiMjZkODQyYjhiMTZmNTRjMjc1OGIyNmZjIiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJvYmkxIiwiZmlyc3RfbmFtZSI6Ik9iaS1XYW4ifQ.O6LVCpoZlMO2pCugOg_KLMlyhkiVQ415GX1xNqc8uJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/kdmcjhdg9756d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"kdmcjhdg9756d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NjA1ODIyLCJpYXQiOjE2ODM3NDE4MjIsImp0aSI6ImYxMWRlY2RiN2RmZDQxMGM5MTdmNmE0YWY5YjEyNGQ0IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJvYmkxIiwiZmlyc3RfbmFtZSI6Ik9iaS1XYW4ifQ.uN09UcQZs2R8VDmYwJAW69KwOtnbChDk-M7cNE388Sw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NjA1ODIyLCJpYXQiOjE2ODM3NDE4MjIsImp0aSI6ImYxMWRlY2RiN2RmZDQxMGM5MTdmNmE0YWY5YjEyNGQ0IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJvYmkxIiwiZmlyc3RfbmFtZSI6Ik9iaS1XYW4ifQ.uN09UcQZs2R8VDmYwJAW69KwOtnbChDk-M7cNE388Sw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"video_id\": \"kdmcjhdg9756d\",\r\n        \"text\": \"Which Star Wars do you think is the best?\",\r\n        \"likes\": 0,\r\n        \"dislikes\": 0\r\n    \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
 								""
 							]
 						}
