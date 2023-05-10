@@ -15,19 +15,10 @@ from .serializers import CommentSerializer
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def video_comments(request, pk):
-    # all_comments = Comment.objects.all()
-
-    # for comment in all_comments:
-    print(
-        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
     comments = Comment.objects.filter(video_id=pk)
     serializer = CommentSerializer(comments, many=True)
     return Response(serializer.data)
-    
 
-    # comments = Comment.objects.all()
-    # serializer = CommentSerializer(comments, many=True)
-    # return Response(serializer.data)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
